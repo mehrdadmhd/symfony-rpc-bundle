@@ -69,7 +69,7 @@
         <xsd:choice>
             <xsd:element name="i4"            type="xsd:int" />
             <xsd:element name="int"           type="xsd:int" />
-            <xsd:element name="string"        type="ASCIIString" />
+            <xsd:element name="string"        type="xsd:string" />
             <xsd:element name="double"        type="xsd:decimal" />
             <xsd:element name="Base64"        type="xsd:base64Binary" />
             <xsd:element name="boolean"       type="NumericBoolean" />
