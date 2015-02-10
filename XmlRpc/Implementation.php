@@ -287,6 +287,8 @@ class Implementation extends BaseImplementation
     {
         if ($value === null) {
             return ValueType::Null;
+        } elseif (is_string($value)) {
+            return ValueType::String;
         } elseif (is_float($value)) {
             return ValueType::Double;
         } elseif (is_numeric($value)) {
