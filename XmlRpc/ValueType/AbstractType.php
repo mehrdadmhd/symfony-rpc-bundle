@@ -14,7 +14,7 @@ namespace Seven\RpcBundle\XmlRpc\ValueType;
 use Seven\RpcBundle\XmlRpc\Implementation;
 use XmlRpc\ServerBundle\XmlRpc\ValueType;
 
-abstract class AbstractType implements TypeInterface
+class AbstractType implements TypeInterface
 {
     protected $impl;
 
@@ -46,16 +46,20 @@ abstract class AbstractType implements TypeInterface
 
     public function unwrap(\DOMElement $element, $wrapName = null)
     {
-        if($wrapName != null)
-            if($element->tagName != $wrapName)
+        if ($wrapName != null && $element->tagName != $wrapName) {
                 throw new \Exception("Element must be wrapped into '$wrapName' instead of '{$element->tagName}'");
+        }
 
         return $element->firstChild;
     }
 
     // @codeCoverageIgnoreStart
-    abstract public function pack(\DOMDocument $document, $value);
+    public function pack(\DOMDocument $document, $value) {
+        
+    }
 
-    abstract public function extract(\DOMElement $element);
+    public function extract(\DOMElement $element) {
+        
+    }
     // @codeCoverageIgnoreEnd
 }
